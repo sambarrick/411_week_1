@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import FirstComponent from './FirstComponent';
 
@@ -31,12 +31,12 @@ formSubmit = event => {
 
 deleteToDo = event => {
   let array = [...this.state.items];
-  let index = array.indexOf(event.target.value)
+  let index = array.indexOf(event.target.value);
   if (index !== -1) {
-    array.splice(index, 1);
+    array.splice(index, 1); 
     this.setState({items: array});
   }
-}
+} 
 
 render(){
   console.log("see here",this.state.isOn)
@@ -50,7 +50,7 @@ render(){
   </form>
   <ul>
   {this.state.items.map((item, index) => {
-    return <li key={index}>{this.state.items[index]} <button  onClick={this.deleteToDo}>Delete</button></li>
+    return <li key={index}>{this.state.items[index]} <button onClick={this.deleteToDo}>Delete</button></li>
   })}</ul>
   <FirstComponent items={this.state.items}/>
     </div>
